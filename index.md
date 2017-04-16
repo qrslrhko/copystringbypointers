@@ -1,6 +1,6 @@
 ## Copy a string by using pointers in c 
 
-There are many methods to copy a string to another string in c. Generally, I use [strcpy][https://www.tutorialspoint.com/c_standard_library/c_function_memcpy.htm] a lot in c . 
+There are many methods to copy a string to another string in c. Generally, I use (strcpy)[https://www.tutorialspoint.com/c_standard_library/c_function_memcpy.htm] a lot in c . 
 
 ### Markdown
 
