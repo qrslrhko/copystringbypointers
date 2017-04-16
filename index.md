@@ -43,7 +43,7 @@ target [r]
 target [l]
 target [d]
 ```
-   
+```c   
 source: | H | e | l | l | o |   | W | o | r | l | d |'\0'|
 target: |   |   |   |   |   |   |   |   |   |   |   |    |.......|
           ↑
@@ -52,22 +52,42 @@ start_pointer pointers to the beginning of target
 
 ---while loop---
 target: | H |   |   |   |   |   |   |   |   |   |   |    |.......|
+          ↑
+          target pointer
 target: | H | e |   |   |   |   |   |   |   |   |   |    |.......|
-target: | H | e | l |   |   |   |   |   |   |   |   |    |.......|         
-target: | H | e | l | l |   |   |   |   |   |   |   |    |.......|        
+              ↑
+          target pointer
+target: | H | e | l |   |   |   |   |   |   |   |   |    |.......|  
+                  ↑
+            target pointer
+target: | H | e | l | l |   |   |   |   |   |   |   |    |.......|   
+                      ↑
+               target pointer
 target: | H | e | l | l | o |   |   |   |   |   |   |    |.......|    
-target: | H | e | l | l | o |   | W |   |   |   |   |    |.......|    
+                          ↑
+                     target pointer
+target: | H | e | l | l | o |   | W |   |   |   |   |    |.......| 
+                              ↑
+                        target pointer
 target: | H | e | l | l | o |   | W | o |   |   |   |    |.......|    
+                                  ↑
+                            target pointer
 target: | H | e | l | l | o |   | W | o | r |   |   |    |.......|   
+                                      ↑
+                                target pointer
 target: | H | e | l | l | o |   | W | o | r | l |   |    |.......|   
+                                          ↑
+                                    target pointer
 target: | H | e | l | l | o |   | W | o | r | l | d |    |.......|   
+                                                  ↑
+                                            target pointer
 ---out of loop---
 
 
 target: | H | e | l | l | o |   | W | o | r | l | d |'\0'|.......|          // *target = '\0';
                                                       ↑
                                                     target are here. Give null character represent termination of string  
-                                                    
+```                                                    
                                              
                                                     
                                                     
