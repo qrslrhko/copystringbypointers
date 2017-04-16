@@ -26,6 +26,9 @@ char *CopyString(char *target, char *source){
 }
 
 ```
+`printf("target [%s]\n",target );`this line will print out: 
+
+
 
 
 
