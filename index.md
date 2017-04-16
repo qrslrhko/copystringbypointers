@@ -28,21 +28,7 @@ char *CopyString(char *target, char *source){
 }
 
 ```
-`printf("target [%s]\n",target );` this line will print out: 
 
-```c
-target [H]
-target [e]
-target [l]
-target [l]
-target [o]
-target [ ]
-target [W]
-target [o]
-target [r]
-target [l]
-target [d]
-```
 ```c   
 source: | H | e | l | l | o |   | W | o | r | l | d |'\0'|
 target: |   |   |   |   |   |   |   |   |   |   |   |    |.......|
