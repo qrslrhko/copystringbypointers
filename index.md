@@ -24,7 +24,7 @@ char *CopyString(char *target, char *source){
     }
   *target = '\0';
   
-  return start_pointer,
+  return start_pointer;
 }
 
 ```
@@ -43,13 +43,34 @@ target [r]
 target [l]
 target [d]
 ```
-
-source: | H | e | l | l | o |   | W | o | r | l | d |
+   
+source: | H | e | l | l | o |   | W | o | r | l | d |'\0'|
+target: |   |   |   |   |   |   |   |   |   |   |   |    |.......|
           ↑
-      start_pointer
+start_pointer pointers to the beginning of target
 
 
+---while loop---
+target: | H |   |   |   |   |   |   |   |   |   |   |    |.......|
+target: | H | e |   |   |   |   |   |   |   |   |   |    |.......|
+target: | H | e | l |   |   |   |   |   |   |   |   |    |.......|         
+target: | H | e | l | l |   |   |   |   |   |   |   |    |.......|        
+target: | H | e | l | l | o |   |   |   |   |   |   |    |.......|    
+target: | H | e | l | l | o |   | W |   |   |   |   |    |.......|    
+target: | H | e | l | l | o |   | W | o |   |   |   |    |.......|    
+target: | H | e | l | l | o |   | W | o | r |   |   |    |.......|   
+target: | H | e | l | l | o |   | W | o | r | l |   |    |.......|   
+target: | H | e | l | l | o |   | W | o | r | l | d |    |.......|   
+---out of loop---
 
+
+target: | H | e | l | l | o |   | W | o | r | l | d |'\0'|.......|          // *target = '\0';
+                                                      ↑
+                                                    target are here. Give null character represent termination of string  
+                                                    
+                                             
+                                                    
+                                                    
 ```c
 int main(int argc, char const *argv[])
 {
