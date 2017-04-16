@@ -78,6 +78,9 @@ target: | H | e | l | l | o |   | W | o | r |   |   |    |.......|
 target: | H | e | l | l | o |   | W | o | r | l |   |    |.......|   
                                           ↑
                                     target pointer
+target: | H | e | l | l | o |   | W | o | r | l |   |    |.......|   
+                                              ↑
+                                        target pointer
 target: | H | e | l | l | o |   | W | o | r | l | d |    |.......|   
                                                   ↑
                                             target pointer
@@ -88,8 +91,10 @@ target: | H | e | l | l | o |   | W | o | r | l | d |'\0'|.......|          // *
                                                       ↑
                                                     target are here. Give null character represent termination of string  
 ```                                                    
-                                             
-                                                    
+            
+Because I want to return this copying string we have to return `start_pointer`. This pointer points to the beginning of destination.If we return `target` pointer, it will point out nothing becuase it is in the end of detination. <br />               
+            
+In the main function, we allocate a space of dentination string by `malloc`.  <br />                                                   
                                                     
 ```c
 int main(int argc, char const *argv[])
@@ -98,7 +103,8 @@ int main(int argc, char const *argv[])
   char *target;
   target = malloc((100+1)*sizeof(char*));
   char *result;
-  
+  result = CopyString(target,str1);
+  printf("<%s>\n",result );
   
 }
 
